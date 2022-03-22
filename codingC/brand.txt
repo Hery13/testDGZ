@@ -1,0 +1,6 @@
+5
+orange  54
+fnac    45
+amazon  15
+orange  6
+amazon  5

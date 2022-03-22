@@ -2,7 +2,7 @@ CC=	gcc
 CFLAGS=	-g	-O3	-Wall
 LDFLAGS=	-lm
 EXEC=	mytest
-BIN=	main.o
+BIN=	main.o	utils.o
 
 all:$(EXEC)
 
