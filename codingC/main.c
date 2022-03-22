@@ -2,11 +2,9 @@
 *this program allows to read the number of items stored in a binary file and to sum the same data
 *
 *Execution:
-*
 *./bin [file]
-*
 *file : binary file
-*row: row to read
+*
 */
 #include<stdio.h>
 #include<stdlib.h>
@@ -18,7 +16,8 @@ int main(int argc, char **argv)
 
     brands *d;
 
-    d = readDataBrands(name); 
+    d = readDataBrands(name);
+    printDataBrands(d); 
 
     return 0;
 }
