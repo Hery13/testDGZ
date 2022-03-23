@@ -63,22 +63,19 @@ void printDataBrands(brands *data)
 *function to counting brands
 *input:data
 */
-void countingBrands(brands *data)
+void countingBrands(brands *data, char *b)
 {
+    int tBrands = 0;
+  
     for (int i = 0; i < data->number; i++)
-    {
-        int tBrands = 0;
-
-        for (int j = i+1; j < data->number; j++)
+    {    
+        if (strcmp(data[i].nom, b) == 0)
         {
-            if (strcmp(data[i].nom, data[j].nom) == 0)
-            {
-               tBrands += data[i].value + data[j].value;       
-            }    
-        }
-
-        printf(" %s, total : %d \n", data[i].nom , tBrands);
+           tBrands += data[i].value;       
+        }    
     }    
+
+    printf("%s, total : %d \n", b , tBrands);
 }
 
 /*

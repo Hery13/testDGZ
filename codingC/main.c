@@ -2,9 +2,9 @@
 *this program allows to read the number of items stored in a binary file and to sum the same data
 *
 *Execution:
-*./bin [file]
-*file : binary file
-*
+*./bin [file] [brands]
+*file  : binary file
+*brands: the brands we need a total counting
 */
 #include<stdio.h>
 #include<stdlib.h>
@@ -13,6 +13,7 @@
 int main(int argc, char **argv)
 {
     char *name = argv[1];
+    char *b = argv[2];
 
     brands *d;
 
@@ -21,7 +22,7 @@ int main(int argc, char **argv)
     //print data
     printDataBrands(d); 
     //counting brands
-    countingBrands(d);
+    countingBrands(d,b);
     //free
     freeBrands(d);
 
