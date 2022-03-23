@@ -61,7 +61,7 @@ void printDataBrands(brands *data)
 
 /*
 *function to counting brands
-*input:data
+*input:data and brands
 */
 void countingBrands(brands *data, char *b)
 {
