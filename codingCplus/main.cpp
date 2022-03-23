@@ -16,6 +16,7 @@ int main(int argc, char **argv)
     //call class utils
     task b;
     b.loadDataBrands(fname);
+    b.printDataBrands();
     
     return 0;
 }

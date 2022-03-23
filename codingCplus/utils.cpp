@@ -20,7 +20,7 @@ void task::loadDataBrands(char *fname)
     {
         exit(1);
     }
-    
+    //counting number rows in file
     while ((c=fgetc(fp)) != EOF)
     {
         if (c == '\n')
@@ -33,14 +33,27 @@ void task::loadDataBrands(char *fname)
     rewind(fp);
 
     //affect value
-    fscanf(fp,"%d", &data->value);
+    fscanf(fp,"%d", &data->rows);
     
-    for (int i = 0; i < data->value ; i++)
+    for (int i = 0; i < data->rows ; i++)
     {
         fscanf(fp, "%s %d", data[i].nom, &data[i].value);
     }
 }
 
+/*
+*function to print data brands
+*/
+void task::printDataBrands()
+{
+    cout<<"rows :"<<data->rows<<endl;
+
+    for (int i = 0; i < data->rows ; i++)
+    {
+       cout<< data[i].nom<< "\t" << data[i].value <<endl;
+    }
+    
+}
 task::~task()
 {
     delete data;
