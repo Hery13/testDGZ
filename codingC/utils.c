@@ -14,7 +14,7 @@ brands *readDataBrands(char *fname)
         exit(0);
     }
     //open file
-    FILE *f = fopen(fname,"r+");
+    FILE *f = fopen(fname,"rb+");
 
     int nb = 0;
     char c=' ';
