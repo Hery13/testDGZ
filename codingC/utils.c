@@ -34,13 +34,6 @@ brands *readDataBrands(char *fname)
     
     fscanf(f,"%d", &data->number);
 
-    //check if number different number of brands
-    if (data->number != nb-1)
-    {
-        printf("Number rows is different of the number brands\n");
-        exit(0);
-    }
-
 
     for (int i = 0; i < data->number; i++)
     {
@@ -63,6 +56,35 @@ void printDataBrands(brands *data)
     for (int i = 0; i < data->number; i++)
     {
         printf("%s %d \n", data[i].nom, data[i].value);
-    }
-    
+    }   
+}
+
+/*
+*function to counting brands
+*input:data
+*/
+void countingBrands(brands *data)
+{
+    for (int i = 0; i < data->number; i++)
+    {
+        int tBrands = 0;
+
+        for (int j = i+1; j < data->number; j++)
+        {
+            if (strcmp(data[i].nom, data[j].nom) == 0)
+            {
+               tBrands += data[i].value + data[j].value;       
+            }    
+        }
+
+        printf(" %s, total : %d \n", data[i].nom , tBrands);
+    }    
+}
+
+/*
+*free allocation
+*/
+void freeBrands(brands *data)
+{
+    free(data);
 }

@@ -17,7 +17,13 @@ int main(int argc, char **argv)
     brands *d;
 
     d = readDataBrands(name);
+
+    //print data
     printDataBrands(d); 
+    //counting brands
+    countingBrands(d);
+    //free
+    freeBrands(d);
 
     return 0;
 }

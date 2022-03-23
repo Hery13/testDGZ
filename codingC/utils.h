@@ -17,6 +17,9 @@ typedef struct
 brands *readDataBrands(char *fname);
 //prototype for print data
 void printDataBrands(brands *data);
-
+//prottotype for counting brands
+void countingBrands(brands *data);
+//protoype free  data
+void freeBrands(brands *data);
 
 #endif
