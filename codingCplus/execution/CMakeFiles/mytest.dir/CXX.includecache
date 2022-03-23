@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hery/Documents/Linux/testDGZ/codingCplus/main.cpp
+iostream
+-
+utils.hpp
+/home/hery/Documents/Linux/testDGZ/codingCplus/utils.hpp
+
+/home/hery/Documents/Linux/testDGZ/codingCplus/utils.hpp
+iostream
+-
+string
+-
+cstdlib
+-
+cstdio
+-
+

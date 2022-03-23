@@ -1,0 +1,4 @@
+/home/hery/Documents/Linux/testDGZ/codingCplus/execution/CMakeFiles/rebuild_cache.dir
+/home/hery/Documents/Linux/testDGZ/codingCplus/execution/CMakeFiles/edit_cache.dir
+/home/hery/Documents/Linux/testDGZ/codingCplus/execution/CMakeFiles/mytest.dir
+/home/hery/Documents/Linux/testDGZ/codingCplus/execution/CMakeFiles/utils.dir
