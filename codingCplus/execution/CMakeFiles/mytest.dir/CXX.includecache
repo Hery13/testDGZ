@@ -15,7 +15,7 @@ utils.hpp
 /home/hery/Documents/Linux/testDGZ/codingCplus/utils.hpp
 iostream
 -
-string
+cstring
 -
 cstdlib
 -
