@@ -3,7 +3,7 @@
 #ifndef UTILS_HPP
 #define UTILS_HPP
 #include<iostream>
-#include<string>
+#include<cstring>
 #include <cstdlib>
 #include <cstdio>
 
@@ -29,9 +29,14 @@ private:
 public:
     brands *data;
 
+    task(){data == NULL;}
+    //protoype to load data
     void loadDataBrands(char *fname);
+    //prototype to print data
     void printDataBrands();
-
+    //prototype to counting brands
+    void countingBrand(char *mark);
+    //destructor
     ~task();
 };
 

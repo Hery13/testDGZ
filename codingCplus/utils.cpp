@@ -54,6 +54,25 @@ void task::printDataBrands()
     }
     
 }
+
+/*
+*function to counting brands
+*/
+void task::countingBrand(char *mark)
+{
+    int brandTotal = 0;
+
+    for (int i = 0; i < data->rows; i++)
+    {
+        if (strcmp(data[i].nom, mark) == 0)
+        {
+            brandTotal +=data[i].value;
+        }       
+    }
+    
+    cout<<mark << "\t" <<"Total:"<< brandTotal<<endl;
+}
+
 task::~task()
 {
     delete data;
