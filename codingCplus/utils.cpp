@@ -39,6 +39,8 @@ void task::loadDataBrands(char *fname)
     {
         fscanf(fp, "%s %d", data[i].nom, &data[i].value);
     }
+    
+    fclose(fp);
 }
 
 /*
