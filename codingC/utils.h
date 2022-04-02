@@ -8,13 +8,13 @@
 //struct for storing  brands
 typedef struct
 {
-    int number;
-    int value;
+    int nb_char;
     char nom[MAXBUFFEUR];
+    int value;
 }brands;
 
 //prototype for reading file
-brands *readDataBrands(char *fname);
+void readDataBrands(char *fname);
 //prototype for print data
 void printDataBrands(brands *data);
 //prottotype for counting brands

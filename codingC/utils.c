@@ -4,7 +4,7 @@
 * Function to read data 
 *input: file name
 */
-brands *readDataBrands(char *fname)
+void readDataBrands(char *fname)
 {
 
     //check file
@@ -14,35 +14,38 @@ brands *readDataBrands(char *fname)
         exit(0);
     }
     //open file
-    FILE *f = fopen(fname,"rb+");
+    FILE *f = fopen(fname,"rb");
+    //check file
+    if(f == NULL)
+    {
+        printf("Error");
+        exit(-1);
+    }
 
     int nb = 0;
-    char c=' ';
-
-  //check the number of element in file
-    while((c=fgetc(f))!=EOF)
-     {
-        if(c == '\n')
-        {
-            nb++;
-        }        
-     }
-
-    brands *data = NULL;
-    data = (brands*)malloc(sizeof(brands)*nb);
-    rewind(f);
+    brands *data;
     
-    fscanf(f,"%d", &data->number);
-
-
-    for (int i = 0; i < data->number; i++)
+  //check the number of element in file
+    if ((fread(&nb,sizeof(int), 1, f) == 1) != 0)
     {
-        fscanf(f, "%s %d", data[i].nom, &(data[i].value));
+        printf("rows : %d \n", nb);    
+    }
+    
+    data = (brands*)malloc(sizeof(brands) * nb);
+    int i = 0;
+    while (fread(&data[i], sizeof(brands), 1,f) && i < nb)
+    {
+        i++;
+    }
+    
+
+   for (int i = 0; i < nb; i++)
+    {
+        printf("%d %s %d\n",data[i].nb_char, data[i].nom, data[i].value);      
     }
     
     fclose(f);
 
-    return data;
 }
 
 /*
@@ -51,12 +54,7 @@ brands *readDataBrands(char *fname)
 */
 void printDataBrands(brands *data)
 {
-    printf("Number row : %d \n", data->number);
-
-    for (int i = 0; i < data->number; i++)
-    {
-        printf("%s %d \n", data[i].nom, data[i].value);
-    }   
+ 
 }
 
 /*
@@ -65,17 +63,7 @@ void printDataBrands(brands *data)
 */
 void countingBrands(brands *data, char *b)
 {
-    int tBrands = 0;
-  
-    for (int i = 0; i < data->number; i++)
-    {    
-        if (strcmp(data[i].nom, b) == 0)
-        {
-           tBrands += data[i].value;       
-        }    
-    }    
 
-    printf("%s, total : %d \n", b , tBrands);
 }
 
 /*
@@ -83,5 +71,5 @@ void countingBrands(brands *data, char *b)
 */
 void freeBrands(brands *data)
 {
-    free(data);
+   
 }
