@@ -12,13 +12,14 @@
 
 int main(int argc, char **argv)
 {
-    char *name = argv[1];
+   /* char *name = argv[1];
    // char choice = ' ';
+    brands *d;*/
 
-    readDataBrands(name);
+   // d = readDataBrands(name);
 
     //print data
-    // printDataBrands(d); 
+     //printDataBrands(d); 
 
     /*printf("Do you want counting brands[Y/N]? ");
 
@@ -40,6 +41,7 @@ int main(int argc, char **argv)
     }
 */
     //free
+   // freeBrands(d);
 
     return 0;
 }

@@ -14,7 +14,7 @@ typedef struct
 }brands;
 
 //prototype for reading file
-void readDataBrands(char *fname);
+brands *readDataBrands(char *fname, int *rows);
 //prototype for print data
 void printDataBrands(brands *data);
 //prottotype for counting brands

@@ -4,15 +4,17 @@
 * Function to read data 
 *input: file name
 */
-void readDataBrands(char *fname)
+brands *readDataBrands(char *fname, int *rows)
 {
 
-    //check file
+    //check file name
     if (fname == NULL)
     {
         printf("Error read file %s",__func__);
         exit(0);
     }
+
+    brands *data =NULL;
     //open file
     FILE *f = fopen(fname,"rb");
     //check file
@@ -22,30 +24,28 @@ void readDataBrands(char *fname)
         exit(-1);
     }
 
-    int nb = 0;
-    brands *data;
-    
-  //check the number of element in file
-    if ((fread(&nb,sizeof(int), 1, f) == 1) != 0)
+    //check number of rows
+    if (fread(rows,sizeof(int),1,f) != 1)
     {
-        printf("rows : %d \n", nb);    
+        return NULL;
     }
     
-    data = (brands*)malloc(sizeof(brands) * nb);
-    int i = 0;
-    while (fread(&data[i], sizeof(brands), 1,f) && i < nb)
-    {
-        i++;
-    }
-    
+    //allocation table to store data
+    data =(brands*)malloc(sizeof(brands)* *rows);
 
-   for (int i = 0; i < nb; i++)
+    if (fread(data,sizeof(brands),*rows,f) != *rows)
     {
-        printf("%d %s %d\n",data[i].nb_char, data[i].nom, data[i].value);      
+        freeBrands(data);
+        return NULL;
     }
     
-    fclose(f);
-
+    //check end of file
+    if (fclose(f) == EOF)
+    {
+        freeBrands(data);
+    }
+    
+    return data;
 }
 
 /*
@@ -54,7 +54,7 @@ void readDataBrands(char *fname)
 */
 void printDataBrands(brands *data)
 {
- 
+  
 }
 
 /*
@@ -71,5 +71,5 @@ void countingBrands(brands *data, char *b)
 */
 void freeBrands(brands *data)
 {
-   
+   free(data);
 }
