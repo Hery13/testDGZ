@@ -4,7 +4,7 @@
 #include<stdlib.h>
 #include<string.h>
 
-#define MAXBUFFEUR  50
+#define MAXBUFFEUR  256
 //struct for storing  brands
 typedef struct
 {
@@ -16,7 +16,7 @@ typedef struct
 //prototype for reading file
 brands *readDataBrands(char *fname, int *rows);
 //prototype for print data
-void printDataBrands(brands *data);
+void printDataBrands(brands *data, int *rows);
 //prottotype for counting brands
 void countingBrands(brands *data, char *b);
 //protoype free  data

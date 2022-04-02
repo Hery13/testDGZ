@@ -52,8 +52,15 @@ brands *readDataBrands(char *fname, int *rows)
 *Function to print data 
 *input: pointer data
 */
-void printDataBrands(brands *data)
+void printDataBrands(brands *data, int *rows)
 {
+    
+  printf("Number rows : %d \n", *rows);
+
+  for (int i = 0; i < *rows; i++)
+  {
+      printf("%s %d \n", data[i].nom, data[i].value);
+  }
   
 }
 
