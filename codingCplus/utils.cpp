@@ -7,12 +7,12 @@
 void task::loadDataBrands()
 {
     
-   ifstream fp;
+   fstream fp;
    
     fp.open("../counting.bin",ios::in | ios::binary);
 
    //check reading file
-    if (!fp)
+    if (fp.fail())
     {
        cout << "Cannot open file" << endl;
        exit(0);
@@ -30,7 +30,7 @@ void task::loadDataBrands()
    
    for (data_t& d : data)
    {
-      cout<<d.name<<"\t"<<d.value<<endl;
+      cout<<d.number_car<<"\t"<<d.name<<"\t"<<d.value<<endl;
    }
    
    fp.close();
