@@ -6,7 +6,6 @@
 */
 brands *readDataBrands(char *fname, int *rows)
 {
-
     //check file name
     if (fname == NULL)
     {
@@ -33,11 +32,16 @@ brands *readDataBrands(char *fname, int *rows)
     //allocation table to store data
     data =(brands*)malloc(sizeof(brands)* *rows);
 
-    if (fread(data,sizeof(brands),*rows,f) != *rows)
-    {
-        freeBrands(data);
-        return NULL;
-    }
+    //check element for each brands
+   for (int i = 0; i < *rows; i++)
+   {
+        if(fread(&data[i].nb_char, sizeof(int),1,f));
+        if(fread(data[i].nom, sizeof(char),data[i].nb_char,f))
+        {
+            data[i].nom[data[i].nb_char]='\0';
+        }
+        if(fread(&data[i].value, sizeof(int),1,f));
+   }
     
     //check end of file
     if (fclose(f) == EOF)
@@ -59,7 +63,7 @@ void printDataBrands(brands *data, int *rows)
 
   for (int i = 0; i < *rows; i++)
   {
-      printf("%s %d \n", data[i].nom, data[i].value);
+      printf("%s %d\n", data[i].nom , data[i].value);
   }
   
 }

@@ -13,7 +13,6 @@
 int main(int argc, char **argv)
 {
    char *name = argv[1];
-   // char choice = ' ';
     brands *d;
     int rows = 0;
     d = readDataBrands(name, &rows);
@@ -21,25 +20,6 @@ int main(int argc, char **argv)
     //print data
      printDataBrands(d,&rows); 
 
-    /*printf("Do you want counting brands[Y/N]? ");
-
-    scanf("%c",&choice);
-
-    if (choice == 'N' || choice == 'n')
-    {
-        exit(0);
-    }  
-    else if (choice == 'Y' || choice == 'y')
-    {
-        char mark[20];
-
-        printf("Enter your brands: ");
-
-        scanf("%s", mark);
-        //counting brands
-        countingBrands(d,mark);
-    }
-*/
     //free
      freeBrands(d);
 

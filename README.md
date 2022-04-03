@@ -14,4 +14,4 @@ Execution:
 Compilation C code in folder codingC:
     _make
 Execution:
-    _./mytest [binary file]
+    _./mytest [file]

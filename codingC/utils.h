@@ -4,7 +4,7 @@
 #include<stdlib.h>
 #include<string.h>
 
-#define MAXBUFFEUR  256
+#define MAXBUFFEUR  30
 //struct for storing  brands
 typedef struct
 {
