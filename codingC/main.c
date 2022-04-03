@@ -20,6 +20,9 @@ int main(int argc, char **argv)
     //print data
      printDataBrands(d,&rows); 
 
+     //countig brands
+     countingBrands(d, &rows);
+
     //free
      freeBrands(d);
 

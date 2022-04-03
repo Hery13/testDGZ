@@ -18,7 +18,7 @@ brands *readDataBrands(char *fname, int *rows);
 //prototype for print data
 void printDataBrands(brands *data, int *rows);
 //prottotype for counting brands
-void countingBrands(brands *data, char *b);
+void countingBrands(brands *data, int *rows);
 //protoype free  data
 void freeBrands(brands *data);
 

@@ -44,11 +44,8 @@ brands *readDataBrands(char *fname, int *rows)
    }
     
     //check end of file
-    if (fclose(f) == EOF)
-    {
-        freeBrands(data);
-    }
-    
+    fclose(f);
+      
     return data;
 }
 
@@ -64,17 +61,52 @@ void printDataBrands(brands *data, int *rows)
   for (int i = 0; i < *rows; i++)
   {
       printf("%s %d\n", data[i].nom , data[i].value);
-  }
-  
+  }  
 }
 
 /*
 *function to counting brands
-*input:data and brands
+*input:data and rows
 */
-void countingBrands(brands *data, char *b)
+void countingBrands(brands *data, int *rows)
 {
+    brands data_count[*rows];
 
+    //initialize the first brands in data_count
+    strcpy(data_count[0].nom,data[0].nom);
+    data_count[0].value = data[0].value;
+    int size_count = 1;
+
+    int discovery = 1;
+
+    for (int i = 1; i < *rows; i++)
+    {
+        for (int j = 0; j < size_count; j++)
+        {
+            if ((strcmp(data_count[j].nom, data[i].nom)) == 0)
+            {
+                data_count[j].value += data[i].value;
+                discovery = 0;
+            }
+        }
+        
+        if(discovery)
+        {
+            strcpy(data_count[size_count].nom, data[i].nom);
+            data_count[size_count].value=data[i].value;
+            size_count++;
+        }
+
+        discovery = 1;
+    }
+    
+    //print total per brands
+    printf("*************Total per brands***********\n");
+
+    for (int i = 0; i < size_count; i++)
+    {
+      printf("%s %d\n", data_count[i].nom , data_count[i].value);
+    } 
 }
 
 /*
