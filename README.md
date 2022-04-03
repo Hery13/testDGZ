@@ -8,7 +8,7 @@ Compilation C++ code in foler codingCplus:
     _cmake ..
     _make
 Execution:
-    _./mytest [binary file]
+    _./mytest 
 
 
 Compilation C code in folder codingC:

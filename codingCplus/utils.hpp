@@ -27,11 +27,9 @@ class task
 {
   
 public:
-   
+
     //protoype to load data
     void loadDataBrands();
-    //prototype to counting brands
-    void countingBrand(char *mark);
     //destructor
     ~task();
 };
