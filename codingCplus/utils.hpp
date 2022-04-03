@@ -6,34 +6,31 @@
 #include<cstring>
 #include <cstdlib>
 #include <cstdio>
+#include <fstream>
+#include <cstdarg>
+#include <memory>
+#include <vector>
 
 using namespace std;
 
 const int MaxBuffer = 50;
 
-/*struct for data brands*/
-typedef struct
+typedef struct 
 {
-    int rows;
+    int number_car;
+    char name[MaxBuffer];
     int value;
-    char nom[50];
-}brands;
+}data_t;
+
 
 /*class for task*/
 class task
 {
-
-private:
-    char c;
-    int nb;
+  
 public:
-    brands *data;
-
-    task(){data == NULL;}
+   
     //protoype to load data
-    void loadDataBrands(char *fname);
-    //prototype to print data
-    void printDataBrands();
+    void loadDataBrands();
     //prototype to counting brands
     void countingBrand(char *mark);
     //destructor
